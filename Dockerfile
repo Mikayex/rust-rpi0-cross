@@ -60,5 +60,5 @@ ENV HOME=/tmp CARGO_TARGET_ARM_UNKNOWN_LINUX_GNUEABIHF_LINKER=arm-linux-gnueabih
     OPENSSL_INCLUDE_DIR=/openssl/include \
     OPENSSL_LIB_DIR=/openssl/lib \
     QEMU_LD_PREFIX=/usr/arm-linux-gnueabihf/arm-linux-gnueabihf \
-    LD_LIBRARY_PATH=/usr/arm-linux-gnueabihf/lib:/usr/arm-linux-gnueabihf/arm-linux-gnueabihf/sysroot/lib \
+    LD_LIBRARY_PATH=/usr/arm-linux-gnueabihf/lib:/usr/arm-linux-gnueabihf/arm-linux-gnueabihf/sysroot/lib:/opt/vc/lib \
     RUST_TEST_THREADS=1
