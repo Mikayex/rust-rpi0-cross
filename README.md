@@ -1,5 +1,5 @@
 # rust-rpi0-cross
-![Docker Build Status](https://img.shields.io/docker/cloud/build/mikaye/rust-rpi0-cross.svg)
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/mikaye/rust-rpi0-cross.svg)](https://hub.docker.com/r/mikaye/rust-rpi0-cross)
 [![](https://images.microbadger.com/badges/image/mikaye/rust-rpi0-cross.svg)](https://microbadger.com/images/mikaye/rust-rpi0-cross "Get your own image badge on microbadger.com")
 
 [Cross](https://github.com/rust-embedded/cross) docker image for RPi 1/RPi 0 rust development.
