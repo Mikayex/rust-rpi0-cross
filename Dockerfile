@@ -1,13 +1,13 @@
 FROM ubuntu:18.04
 
 COPY common.sh /
-RUN /common.sh
+RUN bash /common.sh
 
 COPY cmake.sh /
-RUN /cmake.sh
+RUN bash /cmake.sh
 
 COPY xargo.sh /
-RUN /xargo.sh
+RUN bash /xargo.sh
 
 RUN git clone --depth 1 https://github.com/raspberrypi/tools.git /pi-tools && \
     mv $(readlink -f /pi-tools/arm-bcm2708/arm-linux-gnueabihf) /usr/arm-linux-gnueabihf && \
