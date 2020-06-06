@@ -34,7 +34,7 @@ COPY openssl.sh qemu.sh /
 RUN bash /openssl.sh linux-armv4 arm-linux-gnueabihf- && \
     bash /qemu.sh arm
 
-ENV firmware="1.20190215"
+ENV firmware="1.20200601"
 
 RUN apt-get update \
   && apt-get install -y wget \
