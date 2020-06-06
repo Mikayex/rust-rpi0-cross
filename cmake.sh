@@ -4,10 +4,9 @@ set -x
 set -euo pipefail
 
 main() {
-    local dependencies=(
-        ca-certificates
-        curl
-    )
+    local version=3.17.2
+
+    local dependencies=(curl)
 
     apt-get update
     local purge_list=()
@@ -18,21 +17,22 @@ main() {
         fi
     done
 
-    export RUSTUP_HOME=/tmp/rustup
-    export CARGO_HOME=/tmp/cargo
+    local td
+    td="$(mktemp -d)"
 
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o rustup-init.sh
-    sh rustup-init.sh -y --no-modify-path --profile minimal
-    rm rustup-init.sh
+    pushd "${td}"
 
-    PATH="${CARGO_HOME}/bin:${PATH}" cargo install xargo --root /usr/local
+    curl -sSfL "https://github.com/Kitware/CMake/releases/download/v${version}/cmake-${version}-Linux-x86_64.sh" -o cmake.sh
+    sh cmake.sh --skip-license --prefix=/usr/local
 
-    rm -r "${RUSTUP_HOME}" "${CARGO_HOME}"
+    popd
 
     if (( ${#purge_list[@]} )); then
       apt-get purge --assume-yes --auto-remove "${purge_list[@]}"
     fi
 
+    rm -rf "${td}"
+    rm -rf /var/lib/apt/lists/*
     rm "${0}"
 }
 

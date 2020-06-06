@@ -6,10 +6,8 @@
 
 Beside default cross image, it contains :
 
-- Updated base image to Ubuntu 18.04
 - arm-unknown-linux-gnueabihf cross compiler for Raspberry Pi 1/Raspberry Pi Zero(W)
 - [vc libraries](https://github.com/raspberrypi/firmware/tree/1.20190215/hardfp/opt/vc)
-- Clang 3.9 (for use with [bindgen](https://github.com/rust-lang/rust-bindgen))
 - `cross test` and `cross run` can optionally upload and run to target device
 
 ## How to use
